@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>마이트립 어드바이저 - 회원가입</title>
+
+    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <script src="libs/jquery-3.3.1.min.js"></script>
+    <script src="libs/jquery-ui/jquery-ui.min.js"></script>
+    <script src="scripts/register.js"></script>
+  </head>
+  <body class="gray-bg">
+    <div id="container">
+      <div id="header" class="inverted">
+        <div>
+          <a href="index.html"><span></span></a>
+          <div class="menu-items right">
+            <a href="register.html">회원가입</a>
+            <img src="images/line_location_gray.png" alt="메인헤더" />
+            <a href="javascript:showLogin()">로그인</a>
+          </div>
+        </div>
+      </div>
+      <!-- BODY SECTION -->
+      <div id="body">
+        <div class="form-box md-box">
+          <div class="inner">
+            <div class="title">
+              <span class="blue">마이트립</span>
+              <span class="black">어드바이저</span>
+            </div>
+            <span class="sub-title">필수 정보를 입력하세요.</span>
+            <form action="" id="form-register">
+              <!-- 이메일 입력 -->
+              <input
+                type="email"
+                name="email"
+                placeholder="이메일 주소"
+                id="inp-email"
+                autofocus
+              />
+              <div class="txt-warning"></div>
+              <!-- 패스워드 입력 -->
+              <input
+                type="password"
+                name="password"
+                placeholder="비밀번호"
+                id="inp-password"
+              />
+              <div class="txt-warning"></div>
+              <!-- 패스워드 확인 -->
+              <input
+                type="password"
+                name="confirm"
+                placeholder="비밀번호 확인"
+                id="inp-confirm"
+              />
+              <div class="txt-warning"></div>
+              <!-- 성별 선택 -->
+              <div class="div-gender">
+                <input type="radio" name="gender" value="m" id="inp-mail" />
+                <label for="inp-mail">남</label>
+                <input type="radio" name="gender" value="f" id="inp-femail" />
+                <label for="inp-mail">여</label>
+                <span class="txt-warning right"></span>
+              </div>
+              <!-- 출생년도 선택 -->
+              <div class="div-birth">
+                <select id="sel-birth">
+                  <option value="">출생년도 선택</option>
+                </select>
+                <span class="txt-warning right"></span>
+              </div>
+              <!-- 약관동의 선택 -->
+              <div class="div-accept">
+                <input type="checkbox" id="inp-accept" />
+                <label for="inp-accept"
+                  >회원가입을 위한 개인정보 제공에 동의합니다.</label
+                >
+                <span class="txt-warning right"></span>
+              </div>
+              <!-- submit 버튼 영역 -->
+              <button id="btn-submit" type="submit">가입하기</button>
+              <button id="btn-back" type="submit">돌아가기</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
