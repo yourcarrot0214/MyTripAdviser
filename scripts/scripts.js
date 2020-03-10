@@ -47,8 +47,9 @@ function search(from, to) {
       to: to
     },
     function(r) {
-      // data check
-      // console.log(r);
+      // API Data Check
+      console.log(r);
+
       let $list = $("#list-panel");
 
       for (let i = 0; i < r.length; i++) {
