@@ -16,6 +16,9 @@ function getDetail(id) {
       id: id
     },
     function(r) {
+      // API Data Check
+      console.log(r);
+
       $(".detail-header-name").html(r.name);
       $(".detail-header-city-name").html(r.cityName);
       $(".detail-desc-text").html(r.desc);
