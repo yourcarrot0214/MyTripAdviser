@@ -29,7 +29,7 @@
 
     2. detail.js
         여행지별 세부정보 출력.
-        사진 출력 영역 : jQuery Falleria 라이브러리 연결.
+        사진 출력 영역 : jQuery Galleria 라이브러리 연결.
         지도 출력 영역 : 구글지도 API 연결.
         지도 마커 삽입 기능 구현.
 
