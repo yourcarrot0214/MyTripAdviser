@@ -3,11 +3,11 @@ let map;
 $(function() {
   let id = parseId(window.location.search);
 
-  getDetail(id);
+  getDetailInfo(id);
   showMap();
 });
 
-function getDetail(id) {
+function getDetailInfo(id) {
   let API_URL = "https://javascript-basic.appspot.com/locationDetail";
 
   $.getJSON(
@@ -27,7 +27,7 @@ function getDetail(id) {
       let images = r.subImageList;
 
       for (let i = 0; i < images.length; i++) {
-        let $image = $('<img src="' + images[i] + '" />');
+        let $image = $(`<img src="${images[i]}"/>`);
         $gallery.append($image);
       }
 
@@ -36,7 +36,7 @@ function getDetail(id) {
       );
       Galleria.run("#detail-images");
 
-      showMarker(r.position.x, r.position.y);
+      showMarkerOnMap(r.position.x, r.position.y);
 
       $(".btn-register").click(function() {
         let myTrips = Cookies.getJSON("MYTRIPS");
@@ -87,7 +87,7 @@ function showMap() {
   });
 }
 
-function showMarker(lat, lng) {
+function showMarkerOnMap(lat, lng) {
   let pos = {
     lat: lat,
     lng: lng

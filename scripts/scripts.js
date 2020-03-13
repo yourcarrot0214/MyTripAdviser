@@ -12,20 +12,24 @@ $(function() {
   $(window).trigger("scroll");
 
   // calendar setting > jQuery libs datepicker
-  let dpFrom = $("#from").datepicker({
+  let setFromDate = $("#from").datepicker({
     dateFormat: "yy-mm-dd",
     minDate: 0,
     onSelect: function() {
-      dpTo.datepicker("option", "minDate", dpFrom.datepicker("getDate"));
+      setToDate.datepicker(
+        "option",
+        "minDate",
+        setFromDate.datepicker("getDate")
+      );
     }
   });
-  dpFrom.datepicker("setDate", new Date());
+  setFromDate.datepicker("setDate", new Date());
 
-  let dpTo = $("#to").datepicker({
+  let setToDate = $("#to").datepicker({
     dateFormat: "yy-mm-dd",
     minDate: 0
   });
-  dpTo.datepicker("setDate", 4);
+  setToDate.datepicker("setDate", 4);
 
   $("#form-search").submit(function(e) {
     e.preventDefault();
@@ -65,18 +69,18 @@ function search(from, to) {
 }
 // LIST 생성
 function createListItem(data) {
-  let $tmpl = $("#list-item-template")
+  let $template = $("#list-item-template")
     .clone()
     .removeAttr("id");
 
-  $tmpl.find(".list-item-image").attr("src", data.titleImageUrl);
-  $tmpl.find(".list-item-name").html(data.name);
-  $tmpl.find(".list-item-city-name").html(data.cityName);
+  $template.find(".list-item-image").attr("src", data.titleImageUrl);
+  $template.find(".list-item-name").html(data.name);
+  $template.find(".list-item-city-name").html(data.cityName);
 
-  $tmpl.click(function(e) {
-    let url = "detail.html?id=" + data.id;
+  $template.click(function(e) {
+    let url = `detail.html?id=${data.id}`;
     window.location = url;
   });
 
-  return $tmpl;
+  return $template;
 }
